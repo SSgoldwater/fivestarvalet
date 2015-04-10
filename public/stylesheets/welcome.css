@@ -1,0 +1,12 @@
+body { 
+  background-image: url("/images/viewhouse_yellow_lambo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.jumbotron { 
+  background-color: rgba(245, 245, 245, .6);
+  color: #101010;
+}
+
+

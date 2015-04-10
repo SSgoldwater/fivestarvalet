@@ -1,17 +1,5 @@
 body { 
-  color: white;
-  background-color: black;
-  text-align: center;
-}
-
-li {
-  display: inline;
-  color: white;
-  padding: 0px 30px;
-}
-
-a {
-  color: white;
-  text-decoration: none;
+  color: rgb(145, 145, 145);
+  background-color: rgb(45, 45, 45);
 }
 
