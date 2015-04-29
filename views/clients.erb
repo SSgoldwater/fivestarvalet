@@ -1,3 +1,23 @@
+<head>
+<style type="text/css">
+html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+</style>
+<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlm0ysj8ntvbc-cJGMtpxG7V4keuf_-rw">
+</script>
+<script type="text/javascript">
+function initialize() {
+  var mapOptions = {
+center: { lat: -34.397, lng: 150.644},
+	zoom: 8
+  };
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+<body>
 <h3>Our Clients</h3>
 <p>Wondering where to find us? Here is a list of establishments we are currently proud to represent</p>
 
@@ -8,3 +28,6 @@
   <li><a href="http://www.epernaylounge.com">Epernay Lounge</a></li>
   <li><a href="http://www.viewhouse.com/centennial">Viewhouse, Centennial</a></li>
 </ul>
+<div id="map-canvas"></div>
+</body>
+</html>
