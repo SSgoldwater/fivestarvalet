@@ -1,33 +1,60 @@
-<head>
-<style type="text/css">
-html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-</style>
-<script type="text/javascript"
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlm0ysj8ntvbc-cJGMtpxG7V4keuf_-rw">
-</script>
-<script type="text/javascript">
-function initialize() {
-  var mapOptions = {
-center: { lat: -34.397, lng: 150.644},
-	zoom: 8
-  };
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-</head>
-<body>
-<h3>Our Clients</h3>
-<p>Wondering where to find us? Here is a list of establishments we are currently proud to represent</p>
+<!DOCTYPE html>
+  <head>
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=SET_TO_TRUE_OR_FALSE">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
 
-<ul>
-  <li><a href="http://www.pfchangs.com">P.F. Chang's China Bistro</a></li>
-  <li><a href="http://www.lotusclubs.com/chloe">Chloe Discotheque</a></li>
-  <li><a href="http://www.dorchesterdenver.com">Dorchester Social Eatery</a></li>
-  <li><a href="http://www.epernaylounge.com">Epernay Lounge</a></li>
-  <li><a href="http://www.viewhouse.com/centennial">Viewhouse, Centennial</a></li>
-</ul>
-<div id="map-canvas"></div>
-</body>
+	var mapOptions = {
+	  center: { lat: 39.7392, lng: -104.9903},
+	  zoom: 13 
+	};
+
+	var map = new google.maps.Map(document.getElementById('map-canvas'),
+	    mapOptions);
+
+	var changsMarker = new google.maps.Marker({
+	    position: { lat: 39.749334, lng: -104.999661 },
+	    map: map,
+	    title: 'P.F. Changs'
+	});
+
+	var hapaMarker = new google.maps.Marker({ 
+	  position: { lat: 39.749752, lng: -104.999921 },
+	  map: map,
+	  title: 'Hapa Sushi'
+	});
+
+	var changsInfo = new google.maps.InfoWindow({
+	  content: "P.F. Chang's China Bistro"
+	});
+
+	var hapaInfo = new google.maps.InfoWindow({
+	  content: "Hapa Sushi Grill & Sake Bar" 
+	});
+
+	google.maps.event.addListener(changsMarker, 'click', function() {
+	  map.clearMarkers();
+	  changsInfo.open(map,changsMarker);
+	});
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <h3>Our Clients</h3>
+      <p>Wondering where to find us? Here is a list of establishments we are currently proud to represent</p>
+    <ul>
+      <li><a href="http://www.pfchangs.com">P.F. Chang's China Bistro</a></br><a href="http://maps.google.com/?daddr=39.749334,-104.999661">Go There</li>
+      <li><a href="http://www.lotusclubs.com/chloe">Chloe Discotheque</a></li>
+      <li><a href="http://www.dorchesterdenver.com">Dorchester Social Eatery</a></li>
+      <li><a href="http://www.epernaylounge.com">Epernay Lounge</a></li>
+      <li><a href="http://www.viewhouse.com/centennial">Viewhouse, Centennial</a></li>
+    </ul>
+    <div id="map-canvas"></div>
+  </body>
 </html>

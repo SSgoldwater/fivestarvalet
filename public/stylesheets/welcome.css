@@ -2,7 +2,6 @@ body {
   background-image: url("/images/viewhouse_yellow_lambo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0px 50px;
 }
 
 .jumbotron { 
