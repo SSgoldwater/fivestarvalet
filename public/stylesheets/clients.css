@@ -1,0 +1,14 @@
+.intro {
+  color: white;
+  background-color: rgb(35, 35, 35);
+  border-radius: 10px;
+  padding-right: 20px;
+}
+
+#map-canvas {
+  height: 400px;
+  width: 600px;
+  border-radius: 10px;
+  border: 20px solid rgb(35, 35, 35);
+  text-align: center;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <head>
     <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
     </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?sensor=SET_TO_TRUE_OR_FALSE">
@@ -44,8 +44,10 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+    <link rel="stylesheet" href="stylesheets/clients.css"> 
   </head>
   <body>
+    <div class="col-md-4 col-md-offset-1 intro">
     <h3>Our Clients</h3>
       <p>Wondering where to find us? Here is a list of establishments we are currently proud to represent</p>
     <ul>
@@ -55,6 +57,8 @@
       <li><a href="http://www.epernaylounge.com">Epernay Lounge</a></li>
       <li><a href="http://www.viewhouse.com/centennial">Viewhouse, Centennial</a></li>
     </ul>
-    <div id="map-canvas"></div>
+    </div>
+    <span class="col-xs-1"></span>
+    <div id="map-canvas" style="padding: 50px"></div>
   </body>
 </html>
