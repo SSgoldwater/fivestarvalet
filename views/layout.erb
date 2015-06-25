@@ -9,12 +9,13 @@
 
   <body>
     <div class="container">
-      <div class="row">
-	<div class="col-md-4 col-sm-8 col-md-offset-4">
+      <header class="row">
+	<div class="col-xs-6 col-sm-4 col-md-2 pull-left">
 	  <img alt="fivestar logo" src="images/logofivestar.png" class="img-responsive main-logo">
 	</div>
-      </div> 
+      
 	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
 	  <div class="navbar-header">
 	    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 	      <span class="sr-only">Toggle navigation</span>
@@ -26,25 +27,27 @@
 	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	    <ul class= "nav navbar-nav">
 	      <li>
-		<a href="/"><img src="images/starfivestar.png" width=23> Home</a>
+		<a href="/"><img src="images/starfivestar.png" width=20> Home</a>
 	      </li>
 	      <li>
-		<a href="/about"><img src="images/starfivestar.png" width=23> About Us</a>
+		<a href="/about"><img src="images/starfivestar.png" width=20> About Us</a>
 	      </li>
 	      <li>
-		<a href="/services"><img src="images/starfivestar.png" width=23> Services</a>
+		<a href="/services"><img src="images/starfivestar.png" width=20> Services</a>
 	      </li>
 	      <li>
-		<a href="/clients"><img src="images/starfivestar.png" width=23> Our Clients</a>
+		<a href="/clients"><img src="images/starfivestar.png" width=20> Our Clients</a>
 	      </li>
 	      <li>
 		<a href="/contact"><img src="images/starfivestar.png" width=23> Contact Us</a>
 	      </li>
 	    </ul>
 	  </div>
+	</div>
 	</nav>
+      </header>
     </div>
-    <%= yield  %>
+    <%= yield %>
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
