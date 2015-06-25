@@ -28,3 +28,7 @@ li {
 .welcome-header {
   text-align: center;
 }
+
+.navbar-toggle {
+  margin-right: 25px;
+}
