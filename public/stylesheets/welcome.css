@@ -3,10 +3,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.welcome-mobile {
-  background-color: #e42727
-}
-
 h1 {
   background-color: rgba(0, 0, 0, .7);
   border-radius: 5px;
@@ -26,12 +22,15 @@ h2 {
   }
 
   h1 {
-    font-size: 20px;
+    color: rgb(35, 35, 35);
+    font-size: 25px;
     background-color: rgba(0, 0, 0, 0.0);
+    border: 2px solid white;
   }
 
   .welcome-mobile {
     padding: 7px 20px 20px 20px;
+    background-color: #e42727
   }
 
   a {
