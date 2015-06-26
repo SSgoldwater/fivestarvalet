@@ -4,8 +4,8 @@ body {
 }
 
 .carousel h1 {
-  background-color: rgba(0, 0, 0, .7);
   border-radius: 5px;
+  text-shadow: 3px 3px 5px black;
   padding: 15px;
 }
 
@@ -22,6 +22,16 @@ h2 {
 
 .sidebar p {
   padding: 20px;
+}
+
+#five-stars {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.hompage-star {
+  height: 50px;
+  margin: 15px;
 }
 
 @media (max-width: 780px) {

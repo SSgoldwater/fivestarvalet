@@ -11,9 +11,10 @@ html, body {
 }
 
 #footer {
-  position: fixed;
+  height: 20px;
+  margin-top: -40px;
   bottom: 0px;
-  width: 100%;
+  left: 0px;
   text-align: right;
 }
 
