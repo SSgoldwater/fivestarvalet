@@ -33,7 +33,10 @@ h2 {
 
   .welcome-mobile h1 {
     font-size: 25px;
-    border-radius: 0px;
+    background: rgba(0, 0, 0, .7);
+    border-radius: 3px;
+    padding: 20px;
+    
   }
 
   .welcome-mobile {
@@ -41,6 +44,7 @@ h2 {
     background-image: url(https://s3-us-west-2.amazonaws.com/fivestar-pictures/maserati_at_changs.jpg);
     background-size: cover;
     border-radius: 3px;
+    height: 300px;
   }
 
   a {
