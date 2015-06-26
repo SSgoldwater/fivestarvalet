@@ -1,13 +1,14 @@
 <!DOCTYPE html> 
 <html>
-  <head>
-    <!-- styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/layout.css">
-    <meta name="viewport" content="width=device-width initial-scale=1">
-  </head>
+<head>
+  <!-- styles -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/layout.css">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+</head>
 
-  <body>
+<body>
+  <div id="wrap">
     <div class="container">
       <header class="row">
 	<div class="col-xs-4 col-md-2 pull-left">
@@ -16,41 +17,44 @@
       
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
-	  <div class="navbar-header">
-	    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	      <span class="sr-only">Toggle navigation</span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </button>
-	  </div> 
-	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	    <ul class= "nav navbar-nav">
-	      <li>
-		<a href="/"><img src="images/starfivestar.png" width=20> Home</a>
-	      </li>
-	      <li>
-		<a href="/about"><img src="images/starfivestar.png" width=20> About Us</a>
-	      </li>
-	      <li>
-		<a href="/services"><img src="images/starfivestar.png" width=20> Services</a>
-	      </li>
-	      <li>
-		<a href="/clients"><img src="images/starfivestar.png" width=20> Our Clients</a>
-	      </li>
-	      <li>
-		<a href="/contact"><img src="images/starfivestar.png" width=23> Contact Us</a>
-	      </li>
-	    </ul>
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	    </div> 
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class= "nav navbar-nav">
+		<li>
+		  <a href="/"><img src="images/starfivestar.png" width=20> Home</a>
+		</li>
+		<li>
+		  <a href="/about"><img src="images/starfivestar.png" width=20> About Us</a>
+		</li>
+		<li>
+		  <a href="/services"><img src="images/starfivestar.png" width=20> Services</a>
+		</li>
+		<li>
+		  <a href="/clients"><img src="images/starfivestar.png" width=20> Our Clients</a>
+		</li>
+		<li> <a href="/contact"><img src="images/starfivestar.png" width=23> Contact Us</a> </li>
+	      </ul>
+	    </div>
 	  </div>
-	</div>
 	</nav>
+
       </header>
+      <%= yield %>
     </div>
-    <%= yield %>
-    <script type="text/javascript" src="javascripts/jquery.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascripts/layout.js"></script>
-  </body>
+
+  </div>
+  <div id="footer">
+    <p>Stanley Siudzinski, 2015</p>
+  </div>
+  <script type="text/javascript" src="javascripts/jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <script src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascripts/layout.js"></script>
+</body>
 </html>
