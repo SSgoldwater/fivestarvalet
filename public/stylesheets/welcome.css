@@ -38,9 +38,9 @@ h2 {
 
   .welcome-mobile {
     padding: 5px 15px 15px 15px;
-    background-color: #e42727;
     background-image: url(https://s3-us-west-2.amazonaws.com/fivestar-pictures/maserati_at_changs.jpg);
     background-size: cover;
+    border-radius: 3px;
   }
 
   a {
