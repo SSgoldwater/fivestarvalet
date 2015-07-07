@@ -21,3 +21,7 @@ end
 get '/contact' do
   erb :contact
 end
+
+get '/facebook' do
+  redirect "http://facebook.com"
+end

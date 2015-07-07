@@ -2,7 +2,7 @@ html, body {
   color: white;
   background-image: url("https://s3-us-west-2.amazonaws.com/fivestar-pictures/black-wood.jpg");
   background-size: cover;
-  font-family: "Palatino", serif;
+  font-family: 'Roboto Condensed', sans-serif;
   height: 100%;
 }
 
@@ -12,7 +12,7 @@ html, body {
 
 #footer {
   height: 20px;
-  margin-top: -40px;
+  margin-top: -20px;
   bottom: 0px;
   left: 0px;
   text-align: right;
@@ -39,10 +39,14 @@ li {
   padding-top: 15px;
 } 
 
-.welcome-header {
-  text-align: center;
-}
-
 .navbar-toggle {
   margin-right: 25px;
+}
+
+
+@media (max-width: 780px) {
+  #footer {
+    position: relative;
+    margin-top: 20px;
+  }
 }
