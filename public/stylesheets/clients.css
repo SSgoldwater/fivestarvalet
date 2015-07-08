@@ -25,7 +25,7 @@
 }
 
 .restaurant-logo {
-  width: 300px;
+  width: 30%;
 }
 
 #map-canvas {
@@ -33,4 +33,10 @@
   width: 600px;
   border-radius: 10px;
   text-align: center;
+}
+
+@media (max-width: 780px) {
+  .restaurant-logo {
+    width: 100%;
+  }
 }
