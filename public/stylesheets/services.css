@@ -1,12 +1,17 @@
 .intro {
   color: white;
-  background-color: rgba(0, 0, 0, 0.4);
+  <!--background-color: rgba(0, 0, 0, 0.4);-->
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
+.intro h1, p {
+  text-align: center;
+}
+
 .service-window {
   border: 2px solid white;
+  background: rgba(0, 0, 0, .3);
   margin: 25px;
   height: 250px;
   text-align: center;

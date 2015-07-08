@@ -1,8 +1,31 @@
 .intro {
   color: white;
-  background-color: rgba(0, 0, 0, 0.4);
+  <!--background-color: rgba(0, 0, 0, 0.4);-->
   border-radius: 10px;
-  padding-right: 20px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.intro h1 {
+  margin-top: 0px;
+}
+
+.clients-list a {
+  color: #e42727;
+}
+
+.panel {
+  background: rgba(0, 0, 0, .3);
+  border: none;
+}
+
+.panel-heading {
+  background: rgba(0, 0, 0, .3) !important;
+}
+
+.restaurant-logo {
+  width: 300px;
 }
 
 #map-canvas {

@@ -3,9 +3,8 @@
     <style type="text/css">
     html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
     </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?sensor=SET_TO_TRUE_OR_FALSE">
-    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=SET_TO_TRUE_OR_FALSE"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry"></script>
     <script type="text/javascript">
       function initialize() {
 
@@ -14,9 +13,14 @@
 	  zoom: 13 
 	};
 
-	
 	var map = new google.maps.Map(document.getElementById('map-canvas'),
 	    mapOptions);
+
+	var request = {
+	  location: map.getCenter(),
+		    radius: '5000',
+	  query: 'Epernay'
+	};
 
 	var changsMarker = new google.maps.Marker({
 	    position: { lat: 39.749334, lng: -104.999661 },
@@ -30,37 +34,161 @@
 	  title: 'Hapa Sushi'
 	});
 
-	var changsInfo = new google.maps.InfoWindow({
-	  content: "P.F. Chang's China Bistro"
-	});
-
-	var hapaInfo = new google.maps.InfoWindow({
-	  content: "Hapa Sushi Grill & Sake Bar" 
-	});
-
-	google.maps.event.addListener(changsMarker, 'click', function() {
-	  map.clearMarkers();
-	  changsInfo.open(map,changsMarker);
-	});
+	var service = new google.maps.places.PlacesService(map);
+	service.textSearch(request, callback);
       }
-      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+      function callback(results, status) {
+	if (status == google.maps.places.PlacesServiceStatus.OK) {
+	  var epernayMarker = new google.maps.Marker({
+	    map: map,
+	    place: {
+	      placeId: results[0].place_id,
+	      location: results[0].geometry.location}
+	  });
+	}
+      }
+
+      //google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
     <link rel="stylesheet" href="stylesheets/clients.css"> 
   </head>
   <body>
-    <div class="col-md-4 col-md-offset-1 intro">
-    <h3>Our Clients</h3>
-      <p>Wondering where to find us? Here is a list of establishments we are currently proud to represent</p>
-    <ul>
-      <li><a href="http://www.pfchangs.com">P.F. Chang's China Bistro</a></br><a href="http://maps.google.com/?daddr=39.749334,-104.999661">Go There</li>
-      <li><a href="http://www.lotusclubs.com/chloe">Chloe Discotheque</a></li>
-      <li><a href="http://ww.dorchesterdenver.com">Dorchester Social Eatery</a></li>
-      <li><a href="http://www.epernaylounge.com">Epernay Lounge</a></li>
-      <li><a href="http://www.viewhouse.com/centennial">Viewhouse, Centennial</a></li>
-    </ul>
+    <div class="col-md-6 col-md-offset-3 intro">
+      <h1>Our Clients</h1>
+      <p>Five Star Valet is working hard to become the number one name in valet parking in the Greater Denver Area. We strive to mantain close personal relationships with our clients to ensure that they last. Here is a list of establishments that we proudly represent.</p>
     </div>
-    <span class="col-xs-1"></span>
-    <div id="map-canvas" style="padding: 50px"></div>
+    <div class="col-md-10 col-md-offset-1 clients-list">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		  P.F. Chang's China Bistro<span class="glyphicon glyphicon-info-sign pull-right"></span>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body">
+		<img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/pf_changs_logo.jpeg"/>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingTwo">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		  Chloe Discotheque<span class="glyphicon glyphicon-info-sign pull-right"></span>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+	      <div class="panel-body">
+		<img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/chloe_door.jpg">
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingThree">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Dorchester Social Eatery<span class="glyphicon glyphicon-info-sign pull-right"></span> 
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+	      <div class="panel-body">
+                <img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/dorchester_logo.png">
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingThreeandhalf">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThreeandhalf" aria-expanded="false" aria-controls="collapseThreeandhalf">
+                  Prive Nightclub<span class="glyphicon glyphicon-info-sign pull-right"></span> 
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseThreeandhalf" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeandhalf">
+	      <div class="panel-body">
+		<img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/prive_logo.png">
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingFour">
+	      <h4 class="panel-title">
+		<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+		  Epernay Lounge<span class="glyphicon glyphicon-info-sign pull-right"></span>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+	      <div class="panel-body">
+		<img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/epernay_logo.jpeg">
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingFive">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+		  Viewhouse, Centennial<span class="glyphicon glyphicon-info-sign pull-right"></span>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+	      <div class="panel-body">
+		<img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/viewhouse_logo.jpg">
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingSix">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+		  Hapa Sushi Grill & Sake Bar<span class="glyphicon glyphicon-info-sign pull-right"></span>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+	      <div class="panel-body">
+		<img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/hapa_logo.png">
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingSeven">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+		  1515 Restaurant<span class="glyphicon glyphicon-info-sign pull-right"></span>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+	      <div class="panel-body">
+		<img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/1515_logo.jpeg">
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingEight">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+		  Denver Theatre District<span class="glyphicon glyphicon-info-sign pull-right"></span>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+	      <div class="panel-body">
+		<img class="thumbnail restaurant-logo" src="https://s3-us-west-2.amazonaws.com/fivestar-pictures/theatre_logo.jpeg">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+    </div>
   </body>
 </html>

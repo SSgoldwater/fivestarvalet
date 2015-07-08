@@ -8,6 +8,10 @@ h1 {
   border: 2px solid white;
 }
 
-#contact {
-  position: absolute;
+div.contact {
+  padding: 10px 25px 30px 25px;
+}
+
+a {
+  color: #e42727;
 }
