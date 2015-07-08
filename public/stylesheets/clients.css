@@ -24,8 +24,19 @@
   background: rgba(0, 0, 0, .3) !important;
 }
 
-.restaurant-logo {
-  width: 30%;
+.client-info {
+  text-align: center;
+  height: 100%;
+}
+
+.client-info p {
+  margin: auto 0;
+  height: 100%;
+  padding-top: 5px;
+}
+
+.client-logo {
+  <!--margin-right: 20px;-->
 }
 
 #map-canvas {
