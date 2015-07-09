@@ -19,6 +19,7 @@ html, body {
 }
 
 .nav a {
+  text-align: center;
   color: white !important;
   font-size: 17px;
   padding-top: 20px;
