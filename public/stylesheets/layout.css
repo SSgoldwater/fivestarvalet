@@ -30,6 +30,10 @@ html, body {
   font-size: 20px;
 }
 
+.nav a:active {
+  background: yellow !importantu:t;
+}
+
 .main-logo {
   padding: 15px;
   position: relative;
