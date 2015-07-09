@@ -26,3 +26,6 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
   sinatra
+
+BUNDLED WITH
+   1.10.0
